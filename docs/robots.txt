@@ -1,0 +1,17 @@
+# robots.txt for TrialsWiss
+User-agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://trialswiss.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
+
+# Specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
