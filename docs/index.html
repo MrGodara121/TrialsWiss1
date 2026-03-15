@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrialsWiss - AI Clinical Trial Intelligence</title>
+    <meta name="description" content="Switzerland's most advanced AI-powered clinical trial site selection platform. Trusted by Novartis, Roche & 50+ CROs.">
+    <meta name="keywords" content="clinical trials Switzerland, Swissmedic, CRO, hospital finder, investigator profiler">
+    <meta name="author" content="TrialsWiss AG">
+    <link rel="canonical" href="https://trialswiss.com">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%231a4d8c'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-weight='bold'>T</text></svg>">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="TrialsWiss - AI Clinical Trial Intelligence">
+    <meta property="og:description" content="65% faster site selection with Swissmedic-verified data">
+    <meta property="og:image" content="https://trialswiss.com/og-image.jpg">
+    <meta property="og:url" content="https://trialswiss.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" fill="#1a4d8c"/>
+                        <path d="M12 20H28M20 12V28" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <text x="20" y="28" font-size="14" fill="white" text-anchor="middle" font-weight="bold">T</text>
+                    </svg>
+                    <span class="logo-text">Trials<span class="logo-highlight">Wiss</span></span>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#hospitals">Hospitals</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn" id="langBtn">
+                            <i class="fas fa-globe"></i> EN <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="lang-dropdown" id="langDropdown">
+                            <li><a href="#" data-lang="en">🇬🇧 English</a></li>
+                            <li><a href="#" data-lang="de">🇩🇪 Deutsch</a></li>
+                            <li><a href="#" data-lang="fr">🇫🇷 Français</a></li>
+                            <li><a href="#" data-lang="it">🇮🇹 Italiano</a></li>
+                            <li><a href="#" data-lang="es">🇪🇸 Español</a></li>
+                        </ul>
+                    </div>
+                    
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <a href="#" class="btn-login" id="loginBtn">Login</a>
+                    <a href="#" class="btn-primary" id="signupBtn">Free Trial</a>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge">🇨🇭 SWITZERLAND'S #1 CLINICAL TRIAL PLATFORM</span>
+                    <h1 class="hero-title">AI-Powered <span class="gradient-text">Site Selection</span></h1>
+                    <p class="hero-description">Identify the best hospitals and investigators for your clinical trials using real Swissmedic data. Trusted by industry leaders.</p>
+                    
+                    <div class="hero-stats" id="heroStats"></div>
+                    
+                    <div class="hero-cta">
+                        <a href="#" class="btn-primary btn-large">
+                            <i class="fas fa-rocket"></i> Start Free Trial
+                        </a>
+                        <a href="#" class="btn-secondary btn-large">
+                            <i class="fas fa-play-circle"></i> Watch Demo
+                        </a>
+                    </div>
+                    
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Swissmedic Partner</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>GDPR Compliant</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>ISO 27001</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="card-header">
+                            <span>Top Hospitals</span>
+                            <span>AI Score</span>
+                        </div>
+                        <div class="card-item">
+                            <span>Universitätsspital Zürich</span>
+                            <span class="score-high">98</span>
+                        </div>
+                        <div class="card-item">
+                            <span>HUG Geneva</span>
+                            <span class="score-high">97</span>
+                        </div>
+                        <div class="card-item">
+                            <span>CHUV Lausanne</span>
+                            <span class="score-high">96</span>
+                        </div>
+                        <div class="card-item">
+                            <span>Inselspital Bern</span>
+                            <span class="score-medium">95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="trusted-by">
+        <div class="container">
+            <p>Trusted by leading organizations</p>
+            <div class="trusted-logos" id="clientLogos"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Powerful <span class="gradient-text">Features</span></h2>
+                <p class="section-subtitle">Everything you need to accelerate your clinical trials</p>
+            </div>
+            
+            <div class="features-grid" id="featuresGrid"></div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simple Process</span>
+                <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Search Hospitals</h3>
+                    <p>Browse 300+ Swiss hospitals with AI scores</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Compare Investigators</h3>
+                    <p>Review 500+ investigator profiles</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Estimate Costs</h3>
+                    <p>Get 95% accurate cost predictions</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track Competitors</h3>
+                    <p>Monitor 50+ pharma companies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing</span>
+                <h2 class="section-title">Simple, <span class="gradient-text">Transparent</span></h2>
+                <p class="section-subtitle">No hidden fees. No credit card required.</p>
+            </div>
+            
+            <div class="pricing-grid" id="pricingGrid"></div>
+            
+            <div class="payment-methods">
+                <p>Accepted Payment Methods</p>
+                <div class="payment-icons">
+                    <i class="fab fa-paypal"></i>
+                    <i class="fab fa-bitcoin"></i>
+                    <i class="fas fa-university"></i>
+                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fab fa-cc-stripe"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital Finder Tool -->
+    <section id="hospitals" class="tool-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hospital <span class="gradient-text">Finder</span></h2>
+            </div>
+            
+            <div class="tool-card">
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label for="canton">Canton</label>
+                        <select id="canton" class="filter-select">
+                            <option value="">All Cantons</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="specialization">Specialization</label>
+                        <select id="specialization" class="filter-select">
+                            <option value="">All Specializations</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="minScore">Min AI Score</label>
+                        <input type="range" id="minScore" min="0" max="100" value="0" class="score-slider">
+                        <span id="scoreValue">0+</span>
+                    </div>
+                    
+                    <button class="btn-primary search-btn" onclick="searchHospitals()">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                
+                <div class="results-container" id="hospitalResults">
+                    <div class="loading-placeholder">Enter search criteria to find hospitals</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator Tool -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cost <span class="gradient-text">Calculator</span></h2>
+            </div>
+            
+            <div class="tool-card">
+                <div class="calculator-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Patients Needed</label>
+                            <input type="number" id="patients" class="form-input" min="1" value="100">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Trial Phase</label>
+                            <select id="phase" class="form-select">
+                                <option>Phase I</option>
+                                <option>Phase II</option>
+                                <option>Phase III</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Therapeutic Area</label>
+                            <select id="therapeuticArea" class="form-select">
+                                <option>Oncology</option>
+                                <option>Cardiology</option>
+                                <option>Neurology</option>
+                                <option>Immunology</option>
+                                <option>Rare Diseases</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary calculate-btn" onclick="calculateCost()">
+                        <i class="fas fa-calculator"></i> Calculate Cost
+                    </button>
+                </div>
+                
+                <div class="result-container" id="costResult"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
+            </div>
+            
+            <div class="testimonials-slider" id="testimonialsSlider"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to accelerate your clinical trials?</h2>
+                <p>Join 50+ CROs and pharma companies already using TrialsWiss</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary btn-large">Start Free Trial</a>
+                    <a href="#" class="btn-secondary btn-large">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" fill="#1a4d8c"/>
+                            <text x="16" y="22" font-size="12" fill="white" text-anchor="middle" font-weight="bold">T</text>
+                        </svg>
+                        <span>TrialsWiss</span>
+                    </div>
+                    <p>Switzerland's leading AI-powered clinical trial site selection platform.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Baselstrasse 100, 4056 Basel</p>
+                        <p><i class="fas fa-phone"></i> +41 61 123 45 67</p>
+                        <p><i class="fas fa-envelope"></i> info@trialswiss.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Hospital Finder</a></li>
+                        <li><a href="#">Cost Calculator</a></li>
+                        <li><a href="#">Competitor Tracker</a></li>
+                        <li><a href="#">Demographics Map</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Whitepapers</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Imprint</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 TrialsWiss AG. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>API Key</label>
+                    <input type="password" id="loginKey" class="form-input" required>
+                </div>
+                <button type="submit" class="btn-primary modal-btn">Login</button>
+            </form>
+            <p class="modal-footer">Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Start Free Trial</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Work Email</label>
+                    <input type="email" id="signupEmail" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" id="signupCompany" class="form-input" required>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="btn-primary modal-btn">Create Account</button>
+            </form>
+            <p class="modal-footer">Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <p>We use essential cookies only. By continuing, you accept our <a href="#">Cookie Policy</a>.</p>
+        <button class="btn-primary cookie-btn" onclick="acceptCookies()">Accept</button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
